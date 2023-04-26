@@ -1,0 +1,15 @@
+#s {
+    height: 100px;
+    display: flex;
+  justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+    margin-right: auto;
+  }
+  h1{
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    
+  }

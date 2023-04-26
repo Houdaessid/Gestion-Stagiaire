@@ -1,0 +1,28 @@
+
+<div class="container text-center">
+    <h4>Liste des stagiaires</h4>
+    <table class="table table-striped">
+      <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>adresse</th>
+      <th>email</th>
+      <th>telephone</th>
+      <th>datenais</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mydata of data[0]">
+      <td>{{mydata.Nom}}</td>
+      <td>{{mydata.prenom}}</td>
+      <td>{{mydata.telephone}}</td>
+      <td>{{mydata.dateNaissance}}</td>
+      <td>{{mydata.specialite}}</td>
+      <td>{{mydata.adresses}}</td>
+      <td>{{mydata.adressMail}}</td>
+    </tr>
+    <tbody>
+      </table>
+  </div>
