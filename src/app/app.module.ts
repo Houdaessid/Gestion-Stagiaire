@@ -10,8 +10,6 @@ import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import { AuthentificationComponent } from './authentification/authentification.component';
-import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -23,8 +21,6 @@ import { LoginComponent } from './login/login.component';
     ListeDemandeComponent,
     HeaderComponent,
     FooterComponent,
-    AuthentificationComponent,
-    AdminComponent,
     LoginComponent
   ],
   imports: [
@@ -32,8 +28,6 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
