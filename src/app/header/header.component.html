@@ -1,29 +1,39 @@
-<nav class="navbar navbar-expand-md navbar-light" 
-style="background-color: rgb(5, 188, 243);">
-    <div  class="container-fluid">
-       <a class="navbar-brand" href="accueil" >Gestion Stagiaire</a>
-       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarColor04">
-         <ul class="navbar-nav me-auto">
-          <button class="favorite styled" type="button"> <a class="nav-link active" routerLink="accueil">accueil
-             <span class="visually-hidden">(current)</span>
-           </a></button>
-           <li class="nav-item">
-            <button class="favorite styled" type="button"> <a  class="nav-link " routerLink="liste">liste demande</a></button>
-           </li>
-           <li class="nav-item"  >
-            <button class="favorite styled" type="button">  <a  class="nav-link " routerLink="nouveau">nouveau demande</a></button>
-           </li>
-           <li class="nav-item">
-            <button class="h-100" type="button">  <a class="nav-link" routerLink="specialite">spécialité</a></button>
-           </li>
-           
-         </ul>
-         
-       </div>
-     </div>
- 
-     <img src="assets/img/logo.png" alt="image"/>
-   </nav>
+<nav
+  class="navbar navbar-expand-md navbar-light"
+  style="background-color: rgb(5, 188, 243)"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="accueil">Gestion Stagiaire</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <button class="favorite styled" type="button">
+            <a class="nav-link active" routerLink="accueil">accueil </a>
+          </button>
+          <button class="favorite styled" type="button">
+            <a class="nav-link" routerLink="liste">liste demande</a>
+          </button>
+          <button class="favorite styled" type="button">
+            <a class="nav-link" routerLink="nouveau">nouveau demande</a>
+          </button>
+          <button class="h-100" type="button">
+            <a class="nav-link" routerLink="specialite">spécialité</a>
+          </button>
+          <button class="h-100" type="button">
+            <a class="nav-link" routerLink="login">connexion</a>
+          </button>
+      </ul>
+    </div>
+  </div>
+  <img src="assets/img/logo.png" class="p-1" alt="image" width="480" />
+</nav>
