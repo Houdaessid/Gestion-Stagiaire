@@ -4,19 +4,17 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
 import { NouveauDemandeComponent } from './nouveau-demande/nouveau-demande.component';
 import { SpecialiteComponent } from './specialite/specialite.component';
-import { AdminComponent } from './admin/admin.component';
-import { AuthentificationGuard } from './authentification.guard';
+import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent },
+  { path: '', component: AccueilComponent },
   { path: 'nouveau', component: NouveauDemandeComponent },
-  { path: 'liste', component: ListeDemandeComponent },
   { path: 'specialite', component: SpecialiteComponent },
-  {
-    path: 'admin',
-    component: AdminComponent,
-    canActivate: [AuthentificationGuard],
+  { 
+    path: 'liste', 
+    component: ListeDemandeComponent, 
+    canActivate: [AuthGuard] 
   },
   { path: 'login', component: LoginComponent },
 ];
