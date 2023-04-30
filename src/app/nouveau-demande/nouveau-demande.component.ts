@@ -1,22 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-nouveau-demande',
   templateUrl: './nouveau-demande.component.html',
-  styleUrls: ['./nouveau-demande.component.css']
+  styleUrls: ['./nouveau-demande.component.css'],
 })
 export class NouveauDemandeComponent implements OnInit {
-  constructor(private router:Router) { }
+  public nom: string = '';
+  public prenom: string = '';
+  public email: string = '';
+  public telephone: string = '';
+  public adresse: string = '';
+  public specialite: string = '';
+  public message: string = '';
+  constructor(private router: Router, private _apiService: ApiService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  public save(
+    nom: string,
+    prenom: string,
+    email: string,
+    telephone: string,
+    adresse: string,
+    specialite: string,
+    message: string
+  ): void {
+    this._apiService
+      .insertStagiaire({
+        nom,
+        prenom,
+        email,
+        telephone,
+        adresse,
+        specialite,
+        message,
+      })
+      .subscribe((data) => {
+        window.location.reload();
+      });
   }
-  onSubmit(){
-
-    this.router.navigate(['stagiaire'])
-  }
-  // ajouter(){
-
-  // }
-
 }
