@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../services/api.service';
+import { Stagiaire } from '../stagiaire';
 
 @Component({
   selector: 'app-liste-demande',
@@ -8,13 +9,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListeDemandeComponent  {
   title = 'stagiaire';
-  data = [];
-  constructor(private http:HttpClient) {
-    this.http.get('http://localhost/employee.php').subscribe(data => {
-    this.data.push();
-    console.log(this.data);
-    }, error => console.error(error));
+  data: Stagiaire[] = [];
+  constructor(private _apiService: ApiService) {
+   
   }
+  ngOnInit() {
+    this._apiService.getStagiaires().subscribe((res: any) => {
+      this.data = res;
+    });
+  }
+
+  public accepter(id: any) {
+    this._apiService.accepterStagiaire(id).subscribe((res: any) => {
+      this.data = res;
+    });
+  }
+
+  public refuser(id: any) {
+    this._apiService.deleteStagiaire(id).subscribe((res: any) => {
+      this.data = res;
+    });
+  }
+
 }
   
 

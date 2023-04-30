@@ -6,22 +6,28 @@
     <tr>
       <th>Nom</th>
       <th>Prénom</th>
-      <th>adresse</th>
-      <th>email</th>
-      <th>telephone</th>
-      <th>datenais</th>
-      <th>message</th>
+      <th>Email</th>
+      <th>Adresse</th>
+      <th>Telephone</th>
+      <th>Specialite</th>
+      <th>Message</th>
+      <th>Statut</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let mydata of data[0]">
-      <td>{{mydata.Nom}}</td>
-      <td>{{mydata.prenom}}</td>
-      <td>{{mydata.telephone}}</td>
-      <td>{{mydata.dateNaissance}}</td>
-      <td>{{mydata.specialite}}</td>
-      <td>{{mydata.adresses}}</td>
-      <td>{{mydata.adressMail}}</td>
+    <tr *ngFor="let item of data, let i = index">
+      <td>{{item.nom}}</td>
+      <td>{{item.prenom}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.adresse}}</td>
+      <td>{{item.telephone}}</td>
+      <td>{{item.specialite}}</td>
+      <td>{{item.message}}</td>
+      <td>
+        <button class="btn btn-success" (click)="accepter(item.id)" *ngIf="item.status === 'en attente'">Accepter</button>
+        <button class="btn btn-danger" (click)="refuser(item.id)" *ngIf="item.status === 'en attente'">Refuser</button>
+        <span class="badge text-bg-primary" *ngIf="item.status !== 'en attente'">Déjà Accepter</span>
+      </td>
     </tr>
     <tbody>
       </table>

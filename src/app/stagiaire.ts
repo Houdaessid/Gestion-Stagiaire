@@ -3,10 +3,10 @@ export interface Stagiaire {
         prenom: string;
         adresse: string;
         email: string;
-        telephone: number;
-        datenais: number;
+        telephone: string;
         specialite: string;
         message: string;
         id?: number;
+        status?: string;
       }
 
